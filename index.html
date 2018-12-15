@@ -34,6 +34,9 @@
 
        <style type="text/css">
         #head1, #head2 ,#head3, #head4, #head5, #fox, #cnn,#wt,#wp,#ct,#nyt,#lt,#slate {visibility: visible;}
+        ol.roman {
+                list-style-type: upper-roman;
+            }
     
 
 
@@ -48,7 +51,8 @@
                 <h1 id="homeHeading" class = "animated slideUp">Media Polarity</h1>
                 <h2 id="homeHeading" class="animated slideUp">in the precidential election</h2>
                 <hr>
-                <p><font color="white">Liangwei Chen, Ruibin Huang, Fengyu Cai</font></a></p>
+                <font color="white">Applied Data Analysis @<a href='https://dlab.epfl.ch/teaching/fall2018/cs401/'>EPFL</a></font>
+                <p><font color="white">Liangwei Chen, Ruibin Huang, Fengyu Cai</font></p>
                 
                 
             </div>
@@ -66,29 +70,55 @@
     <!-- <section id="services"> -->
         
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
+       
+            
+        <div class="col-lg-12">
                 <hr class="primary">
                 <br>
-
                     <p>
-                    Media polarity has been a controversy topic during the presidential election of the United States in 2016. The breaking news one after another has greatly affected the public opinion and the polling result.As I read news about the president’s campaign, his election and then his inauguration, I felt that there was a sudden shift in the way news media was talking about Mr. Trump, especially during the lead up to his inauguration and the first few weeks of his presidency. While some of the negativity was self-explanatory as Trump questioned the legitimacy of select media</p>
-                    <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">The FAKE NEWS media (failing <a href="https://twitter.com/nytimes">@nytimes</a>, <a href="https://twitter.com/NBCNews">@NBCNews</a>, <a href="https://twitter.com/ABC">@ABC</a>, <a href="https://twitter.com/CBS">@CBS</a>, <a href="https://twitter.com/CNN">@CNN</a>) is not my enemy, it is the enemy of the American People!</p>&mdash; Donald J. Trump (@realDonaldTrump) <a href="https://twitter.com/realDonaldTrump/status/832708293516632065">February 17, 2017</a></blockquote>
+                    During the precidential election 2016, the breaking news has been booming up one after another, which greatly affected the public opinion and the polling result. The fairness of the media has been a controversial topic throughout the election. The republican candidate, Donald Trump, even openly criticized many of the mainstream medias as <a href="https://twitter.com/realDonaldTrump/status/832708293516632065">‘fake news’</a> on twitter. It stimulated our interest about the study of the existence of media polarity, especially for the period of presidential election.</p>
+              
+                    <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">FAKE NEWS - A TOTAL POLITICAL WITCH HUNT!</p>&mdash; Donald J. Trump (@realDonaldTrump) <a href="https://twitter.com/realdonaldtrump/status/818990655418617856">January 10, 2017</a></blockquote>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
-
-                    <p>I wanted to see if data could prove my hypothesis that <i>there was a shift in news sentiment towards Trump before and after his inauguration. </i></p>
-                    
-                </div>
-            </div>
+                    <p>
+                    The main goal of our project is to mine the news before the polling day, November 7th, mainly on the website, to verify <i>whether there exists a phenomena media polarity in news sentiment towards Trump and the relative topics. </i></p>
         </div>
+     
+        
 <div class="container">
             <div class="row">
                 <div class="col-lg-12 ">
                 <hr class="primary">
-                <center><h2 id="head1" class="section-heading animate ">Text Analysis</h2></center>
+                <center><h2 id="head1" class="section-heading animate ">Data Description and Data Preprocessing</h2></center>
                 <br>
-                    <p>There have been <a href="http://www.npr.org/2017/04/13/523709894/using-sentiment-analysis-to-understand-trumps-tweets">multiple</a> sentiment analyses done on Trump’s social media posts. While these projects make the news and garner online attention, <a href="http://thehill.com/homenews/media/321781-analysis-only-3-percent-of-reports-on-cbs-nbc-positive-for-trump">few</a> analyses have been on the <a href="https://www.theatlantic.com/technology/archive/2016/10/a-computers-hot-take-on-2016/504575/">media</a> itself.  During the presidential campaign in 2016, Data Face ran a <a href="http://thedataface.com/trump-media-analysis/">text analysis</a> on news articles about Trump and Clinton. The results gained a lot of media attention and in fact steered conversation. I planned to follow a similar approach. For the final project of our Natural Language processing class at Syracuse University, Daniela Fernández Espinosa from the Information School, James Troncale from the Linguistics Department and I, built a prototype sentiment analyzer to help political figures make better strategy plans. The results of that analysis are posted here.</p>
+                    <p>We collected the monthly news data from <a href="https://corpus.byu.edu/now/">NOW Corpus</a> (News on the Web) established and maintained by <a href="https://www.byu.edu/">Brigham Young University</a>. We mainly extracted three types of data:
+                    <ol class="roman">
+                    <li>
+                        <strong>The source file</strong>, as the main directory, provided the overall information of the news. And the format of each line is <code>NewsID    Date    Country    Media    NewsURL    Title</code>
+                    </li>
+                    <li>
+                        <strong>The text file</strong> contains the content of news.
+                    </li>
+                    <li>
+                        <strong>The lexicon file</strong> contains the linguistic information for each word, which is useful for our futher NLP analysis.
+                    </li>
+                    </ol>
+                    </p>
+                    <br>
+                    <p>
+                        After the observation and analysis on the datasets above, we mainly preprocess the data in the following aspects:
+                        <ol class="roman">
+                            <li>
+                                <strong>Data Extraction</strong>: retrieve the news during the <strong>three months</strong> before the polling date (August, September and October), which is our assumption: these three months are the fierce period of the competition.
+                            </li>
+                            <li>
+                                <strong>Text Cleaning</strong>: remove stopwords, punctuations (excluding sentence splitters), and other unnecessary and illegal characters
+                            </li>
+                            <li>
+                                <strong>Media Grouping</strong>: for one media, it can be presented in multiple formats, such as 'Fox News', 'fox6', and 'www.fox5sendiego.com'. Therefore, we need to collect and group them together as one media.
+                            </li>
+                        </ol>
+                    </p>
                     
                     
                 </div>
@@ -99,16 +129,97 @@
             <div class="row">
                 <div class="col-lg-12 ">
                 <hr class="primary">
-                <center><h2 id="head2" class="section-heading">Sentiment in Media</h2></center>
+                <center><h2 id="head1" class="section-heading animate ">Media Selection</h2></center>
+                <br>
+                    <p>As there are thousands of medias on the website, we decided to choose the mainstream medias based on the <a href="https://www.allyoucanread.com/american-newspapers/">reference</a>. It has collected top 30 of US media. Later, we checked the frequency of these media in our October news dataset, and drop out some medias with low frequency.
+                
+                    </p>
+                <br>
+                </div>
+                <div class="col-lg-12 ">
+                <div id="mediaFreq" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+          
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                <hr class="primary">
+                <center><h2 id="head2" class="section-heading">Leading role: Trump!</h2></center>
                 <br><script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
+<p>After the first glances of thousands pieces of news, we would like to verify our assumption above that the topics about the US presidential election are the most popular ones during the three months before the polling date. </p>
 
-<div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<p>We use the method of TF-IDF to find out top 5 keywords for each of the documents, and analysis their frequency during the three months. </p>
+
+<div align="center" style="font-size:25px;">Keyword Frequency During Three Months</div>
+
+<div class="container">
+    <div class="row">
+         <div class="col-lg-6 col-md-6 text-center">
+
+                        <!-- <div class="service-box"> -->
+                        
+                        <!-- <img src="img/ct.jpg" class="img-responsive" alt="">  </div>  <hr class="primary"> <br> -->
+                        <div id="augustwords" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+                            
+                        <!-- </div>           -->
+                        
+                                           
+
+                    </div>
+
+        <div class="col-lg-6 col-md-6 text-center">
+
+                        <!-- <div class="service-box"> -->
+                        <!-- <center><img src="img/cnn.jpg" class="img-responsive" alt=""> </center></div> <hr class="primary"><br>     -->
+                        <div id="septwords" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                            
+                        <!-- </div>           -->
+                                    
+
+                    </div>
+    </div>
+    </div>
+
+     <div class="row">
+        <div class="col-lg-6 col-md-6 text-center">
+
+            <div id="octoberwords" align="left" style="min-width: 310px; max-width: 800px; height: 400px"></div>             
+        </div>
+
+        <div class="col-lg-6 col-md-6">
+                <div id="part2description" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                    <br>
+                    <br>
+                    <p>
+                        From three month plots, we suprisely find that in all of the three months, the terminologies in the campaign like <I>election</I> and <I>voter</I> exist frequently.
+                        <br>
+                        <br>
+                        Meanwhile, the hot topics drawing extensive attention such as <I>woman</I> and <I>police</I> are also booming up in our keyword analysis. They reflect special features during the elections: Clinton is the first woman candidate from Republican and Democrartic Parties, and the right police has been controversary during the campaign.
+                        <br>
+                        <br>
+                        What most supported our assumption is that during all three months, <I>trump</I> is most concentrating topic! And we check the media polarity of topic <I>trump</I> first.
+
+                    </p>
+                </div>
+        </div>
+</div>
+<!-- <script type="text/javascript">
+    let sept_width = document.getElementById('augustwords').clientWidth;
+    console.log(sept_width);
+    document.getElementById("octoberwords").style.width = sept_width+'px';
+</script> -->
+<!-- <div id="augustwords" style="min-width: 310px; height: 250px; margin: 0 auto;margin-left:80px;margin-right:80px"></div>
+<div id="septwords" style="min-width: 310px; height: 250px; margin: 0 auto;margin-left:80px;margin-right:80px"></div>
+<div id="octoberwords" style="min-width: 310px; height: 250px; margin: 0 auto;margin-left:80px;margin-right:80px"></div> -->
 
 
 
         
-                    <p>There isn’t a very big shift in polarity, but we can see that the percent of negative articles increased after his inauguration while the percent of positive and neutral articles went down. The high percent of neutral articles represents news media’s objectivity. <br> What is more interesting is when we break down this tally, source wise. </p>
+                   <!--  <p>From the  </p> -->
                     
                     
                 </div>
@@ -116,111 +227,27 @@
         </div>
 
 
-        <div class="container">
+        <div class="col-lg-12">
             
                 
                 <hr class="primary">
-                <center><h2 id="head3" class="section-heading">Source Break UP</h2></center>
+                <center><h2 id="head3" class="section-heading">Topic Expansion</h2></center>
 
 
+                <p>
+                    After the media polarity check with topic <I>trump</I>, we would like to expand topics which are related to <I>trump</I>.
+                    <br>
+                    <br>
+                    Based on the three calculation methods, which will be later elaborated in the methodology part, we evaluated the relationship between <I>trump</I> and other topics, and display it as a word chart.
+                </p>
+                <center><img src="img/wordcloud1.png" height="250" width="450" alt=""></center>
+                <br>
+                <br>
+                <p>
+                    We could find that the topics are quite widely spreaded. And we would like to analyze based on different type of topics: names, states, cities, and events.
+                </p>
 
-                <div class="row">
-                
-                    <div class="col-lg-6 col-md-6 text-center">
-
-                        <div class="service-box">
-                        
-                        <img src="img/ct.jpg" class="img-responsive" alt="">  </div>  <hr class="primary"> <br>
-                        <div id="ct" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                           
-
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 text-center">
-
-                        <div class="service-box">
-                        <center><img src="img/cnn.jpg" class="img-responsive" alt=""> </center></div> <hr class="primary"><br>    
-                        <div id="cnn" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                        
-
-                    </div>
-                   
-                </div>
-                <br><br>
-               
-<!-- row two -->
-                  <div class="row">
-                
-                    <div class="col-lg-6 col-md-6 text-center">
-
-                        <div class="service-box">
-                        
-                        <img src="img/fox.jpg" class="img-responsive" alt="">  </div> <hr class="primary"> <br>   
-                        <div id="fox" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                           
-
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 text-center">
-                                <div class="service-box">
-                                     <img src="img/lat.jpg" class="img-responsive" alt=""> </div><hr class="primary"> <br>   
-                                    <div id="lat" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                                 
-
-                             </div>
-                    </div>
-                    <br><br>        
-<!-- row three -->
-                             <div class="row">
-                
-                    <div class="col-lg-6 col-md-6 text-center">
-
-                        <div class="service-box">
-                        
-                        <img src="img/nyt.jpg" class="img-responsive" alt="">  </div> <hr class="primary"> <br>   
-                        <div id="nyt" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                           
-
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 text-center">
-                                <div class="service-box">
-                                     <img src="img/slate.jpg" class="img-responsive" alt=""> </div><hr class="primary"> <br>   
-                                    <div id="slate" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                                 
-
-                             </div>
-                    </div>
-                    <br><br>
-<!-- row four -->
-                             <div class="row">
-                
-                    <div class="col-lg-6 col-md-6 text-center">
-
-                        <div class="service-box">
-                        
-                        <img src="img/wp.jpg" class="img-responsive" alt="">  </div> <hr class="primary"> <br>   
-                        <div id="wp" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                           
-
-                    </div>
-
-                    <div class="col-lg-6 col-md-6 text-center">
-                                <div class="service-box">
-                                     <img src="img/wt.jpg" class="img-responsive" alt=""> </div><hr class="primary"> <br>   
-                                    <div id="wt" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>          
-                        
-                                                 
-
-                             </div>
-                    </div>
+</div>  
                                  
               
             <div class="col-lg-12 ">
@@ -343,63 +370,356 @@
 
     <!-- Theme JavaScript -->
     <script src="js/creative.min.js"></script>
+<script type="text/javascript">
 
-
-    <script type="text/javascript">
-
-Highcharts.chart('container1', {
+Highcharts.chart('mediaFreq', {
+    colors: ['#A2F212'],
     chart: {
         type: 'column'
     },
     title: {
-        text: 'News Media Polarity'
+        text: 'Media Freqency'
     },
-    // subtitle: {
-    //     text: 'Source: WorldClimate.com'
-    // },
+    subtitle: {
+        text: null
+    },
     xAxis: {
         categories: [
-            'Negative',
-            'Neutral',
-            'Positive',
-            
+'Fox News',
+ 'NBC News',
+ 'CBS News',
+ 'Los Angeles Times',
+ 'ABC News',
+ 'Huffington Post',
+ 'NPR',
+ 'USA TODAY',
+ 'TIME',
+ 'New York Post',
+ 'CNN',
+ 'Quartz',
+ 'Reuters',
+ 'Slate Magazine',
+ 'Washington Post',
+ 'The Atlantic',
+ 'Daily Beast',
+ 'Politico',
+ 'Breitbart News',
+ 'VICE',
+ 'New York Times',
+ 'Newsweek',
+ 'Houston Chronicle'
         ],
         crosshair: true
     },
     yAxis: {
         min: 0,
+        max:12000,
         title: {
-            text: 'Percent'
+            text: 'Freqency'
         }
     },
-     credits: {
-      enabled: false
-  },
-  exporting: { enabled: false },
     tooltip: {
-        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
-        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
-            '<td style="padding:0"><b>{point.y:.1f} %</b></td></tr>',
+            headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><table>',
+        pointFormat: 
+            '<td style="padding:0"><b>{point.y:.1f} </b></td>',
         footerFormat: '</table>',
         shared: true,
         useHTML: true
     },
     plotOptions: {
         column: {
-            pointPadding: 0.2,
+            pointPadding: 0,
             borderWidth: 0
         }
     },
     series: [{
-        name: 'Before inauguration',
-        color: "#FFD700",
-        data: [38.44, 36.85, 24.7]
+        showInLegend: false,
+        name: null,
+        data: [
+        11641,
+ 8271,
+ 6752,
+ 6607,
+ 5745,
+ 5190,
+ 4694,
+ 4338,
+ 3795,
+ 2794,
+ 2783,
+ 2627,
+ 2313,
+ 1916,
+ 1556,
+ 1093,
+ 750,
+ 739,
+ 546,
+ 402,
+ 242,
+ 206,
+ 133]
 
+    }]
+});
+</script>
+
+
+
+<script type="text/javascript">
+
+Highcharts.chart('augustwords', {
+    colors: ['#31BFA2'],
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: null
+    },
+    subtitle: {
+        text: 'August, 2016'
+    },
+    xAxis: {
+        categories: [
+            'trump',
+ 'police',
+ 'comment',
+ 'clinton',
+ 'school',
+ 'say',
+ 'game',
+ 'student',
+ 'officer',
+ 'season',
+ 'woman',
+ 'child',
+ 'percent',
+ 'rio',
+ 'city',
+ 'company',
+ 'olympic',
+ 'campaign',
+ 'county',
+ 'film'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        max:750,
+        title: {
+            text: 'Freqency'
+        }
+    },
+    tooltip: {
+            headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><table>',
+        pointFormat: 
+            '<td style="padding:0"><b>{point.y:.1f} </b></td>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        showInLegend: false,
+        name: null,
+        data: [687,
+ 388,
+ 329,
+ 328,
+ 263,
+ 254,
+ 246,
+ 200,
+ 178,
+ 153,
+ 150,
+ 148,
+ 135,
+ 129,
+ 129,
+ 116,
+ 116,
+ 113,
+ 113,
+ 113]
+
+    }]
+});
+</script>
+<script type="text/javascript">
+
+Highcharts.chart('septwords', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: null
+    },
+    subtitle: {
+        text: 'September, 2016'
+    },
+    xAxis: {
+        categories: [
+            'trump',
+             'clinton',
+             'game',
+             'police',
+             'say',
+             'comment',
+             'school',
+             'woman',
+             'yard',
+             'student',
+             'election',
+             'officer',
+             'percent',
+             'republican',
+             'cub',
+             'company',
+             'hurricane',
+             'child',
+             'city',
+             'voter'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        max:1000,
+        title: {
+            text: 'Freqency'
+        }
+    },
+    tooltip: {
+            headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><table>',
+        pointFormat: 
+            '<td style="padding:0"><b>{point.y:.1f} </b></td>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        showInLegend:false,
+        name: 'Key Words',
+        data: [994,
+                 453,
+                 432,
+                 396,
+                 274,
+                 260,
+                 249,
+                 236,
+                 218,
+                 208,
+                 206,
+                 198,
+                 167,
+                 163,
+                 160,
+                 157,
+                 157,
+                 157,
+                 150,
+                 145]
+
+    }]
+});
+        </script>
     
-    }, {
-        name: 'After inauguration',
-        color: "#FF8C00",
-        data: [43.71, 35.85, 20.43]
+<script type="text/javascript">
+
+Highcharts.chart('octoberwords', {
+    colors:['#A43820'],
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: null
+    },
+    subtitle: {
+        text: 'October, 2016'
+    },
+    xAxis: {
+        categories: [
+            'trump',
+             'clinton',
+             'game',
+             'police',
+             'say',
+             'comment',
+             'school',
+             'woman',
+             'yard',
+             'student',
+             'election',
+             'officer',
+             'percent',
+             'republican',
+             'cub',
+             'company',
+             'hurricane',
+             'child',
+             'city',
+             'voter'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        max:1000,
+        title: {
+            text: 'Freqency'
+        }
+    },
+    tooltip: {
+            headerFormat: '<span style="font-size:12px"><b>{point.key}</b></span><table>',
+        pointFormat: 
+            '<td style="padding:0"><b>{point.y:.1f} </b></td>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        showInLegend:false,
+        // name: 'Key Words',
+        data: [994,
+                 453,
+                 432,
+                 396,
+                 274,
+                 260,
+                 249,
+                 236,
+                 218,
+                 208,
+                 206,
+                 198,
+                 167,
+                 163,
+                 160,
+                 157,
+                 157,
+                 157,
+                 150,
+                 145]
 
     }]
 });
