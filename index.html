@@ -131,8 +131,7 @@
                 <hr class="primary">
                 <center><h2 id="head1" class="section-heading animate ">Media Selection</h2></center>
                 <br>
-                    <p>As there are thousands of medias on the website, we decided to choose the mainstream medias based on the <a href="https://www.allyoucanread.com/american-newspapers/">reference</a>. It has collected top 30 of US media. Later, we checked the frequency of these media in our October news dataset, and drop out some medias with low frequency.
-                
+                    <p>As there are thousands of medias on the website, we decided to choose the mainstream medias based on the <a href="https://www.allyoucanread.com/american-newspapers/">reference</a>. It has collected top 30 US media. Later, we checked the frequency of these media in our October news dataset, and drop out some medias with fewer publications. We set the frequency threshold as 500 to filter out four unpopular medias.
                     </p>
                 <br>
                 </div>
@@ -225,7 +224,112 @@
                 </div>
             </div>
         </div>
+<div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                <hr class="primary">
+                <center><h2 id="head2" class="section-heading">Media Polarity about <I>Trump</I></center>
+                <br><script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<p>After the first glances of thousands pieces of news, we would like to verify our assumption above that the topics about the US presidential election are the most popular ones during the three months before the polling date. </p>
+ <div id="stackChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
 
+
+<script type="text/javascript">
+    
+Highcharts.chart('stackChart', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Media Attitude About Trump'
+    },
+    subtitle: {
+        text: 'October, 2016'
+    },
+    xAxis: {
+        categories: ['ABC News',
+ 'CBS News',
+ 'CNN',
+ 'Fox News',
+ 'Huffington Post',
+ 'Los Angeles Times',
+ 'NBC News',
+ 'Politico',
+ 'Slate Magazine',
+ 'The Atlantic',
+ 'USA TODAY',
+ 'Washington Post']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'News Attitude Percentage'
+        },
+        subtitle: {
+            text: 'October, 2016'
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: {point.percentage:.0f}%<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    series: [{
+        name: 'Positive',
+        data: [0.3888888888888889,
+ 0.1176470588235294,
+ 0.21052631578947367,
+ 0.21052631578947367,
+ 0.45,
+ 0.2972972972972973,
+ 0.3414634146341464,
+ 0.3225806451612903,
+ 0.2222222222222222,
+ 0.07692307692307693,
+ 0.07142857142857142,
+ 0.3404255319148936]
+    }, {
+        name: 'Neutral',
+        data: [0.3055555555555556,
+ 0.2941176470588235,
+ 0.4736842105263158,
+ 0.21052631578947367,
+ 0.30000000000000004,
+ 0.5405405405405405,
+ 0.3658536585365853,
+ 0.5806451612903226,
+ 0.33333333333333337,
+ 0.6923076923076923,
+ 0.7857142857142858,
+ 0.5319148936170213]
+    }, {
+        name: 'Negative',
+        data: [
+        0.3055555555555556,
+ 0.5882352941176471,
+ 0.3157894736842105,
+ 0.5789473684210527,
+ 0.25,
+ 0.16216216216216214,
+ 0.2926829268292683,
+ 0.0967741935483871,
+ 0.4444444444444444,
+ 0.2307692307692308,
+ 0.14285714285714285,
+ 0.1276595744680851]
+    }]
+});
+</script>
+                    
+                    
+                </div>
+            </div>
+        </div>
 
         <div class="col-lg-12">
             
@@ -244,8 +348,61 @@
                 <br>
                 <br>
                 <p>
-                    We could find that the topics are quite widely spreaded. And we would like to analyze based on different type of topics: names, states, cities, and events.
+                    As we found that the topics selected have been messed up, where involved a lot of <I>Name</I>, <I>City</I> and <I>State</I> which we are not interested, we filtered out the topics which belong to these catogories. The result is following:
                 </p>
+
+                <div class="col-md-4">
+                    <figure>
+                        <img src="img/name.png" width="320" height="200">
+                        <figcaption align="center">WordCloud of <I>Name</I></figcaption>
+                    </figure>   
+                </div>
+                <div class="col-md-4">
+                    <figure>
+                        <img src="img/city.png" width="320" height="200">
+                        <figcaption align="center">WordCloud of <I>City</I></figcaption>
+                    </figure>
+                </div>
+                <div class="col-md-4">
+                    <figure>
+                        <img src="img/state.png" width="320" height="200">
+                        <figcaption align="center">WordCloud of <I>State</I></figcaption>
+                    </figure>
+                </div>
+                
+                <p>
+
+                    Even though it is part of our result, there are still something interesting that we would like to share that they are quite matching with the reality, and give us confidence to continue, for example:
+                    <ol class="roman">
+                        <li>
+                            In the wordcloud of <I>Name</I>, there are Cliton, undoubtably, and also some key participants of the elections: like Ivanka, Trump's daughter, and Giuliani, a senior statesman in Republican Party.
+                        </li>
+                        <br>
+                        <li>
+                            Also, in the wordcloud of <I>City</I>, New York, the basis of Trump, has been highlighted, the same as Washington, the polictical hub of the United States.
+                        </li>
+                        <br>
+                        <li>
+                            In the <I>State</I> wordcloud, Ohio is overwhelming, which perfectly matched <a href="https://www.vox.com/presidential-election/2016/11/8/13502954/ohio-election-results-trump-wins">Trump's historical victory in Ohio</a>.
+                        </li>
+                    </ol>
+                </p>
+
+                <p>
+                    After filtering, the wordcloud of filtered keyword is following:
+                    <center>
+                    <figure>
+                        <img src="img/other.png" class="centerImage" height="250" width="450">
+                        <figcaption align="center">WordCloud of <I>Filtered Keywords</I></figcaption>
+                    </figure>
+                    </center>
+                    <br>
+                    And from them, based on the consideration of controversiality, we selected ....... as our next step study.
+                </p>
+
+
+
+
 
 </div>  
                                  
