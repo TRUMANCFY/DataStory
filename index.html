@@ -62,7 +62,7 @@
     <aside class="bg-primary">
         <div class="container text-center">
             <hr class="light">
-                    <p class="text-faded">Model media has been participating in the national affairs as a forth power outside trias politica: the legislature, the executive, and the judiciary. It shoulders the responsibility of supervision via public opinions. However, as a double-edged sword, the conventional bias in highly capitalized media will greatly distorted the truth and destroyed the social fairness. </p>
+                    <p class="text-faded">Model media has been participating in the national affairs as a forth power outside trias politica: the legislature, the executive, and the judiciary. It shoulders the responsibility of supervision via public opinions. However, as a double-edged sword, the conventional bias in highly capitalized media will greatly distort the truth and destroy the social fairness. </p>
                     
         </div>
     </aside>
@@ -231,18 +231,156 @@
                 <center><h2 id="head2" class="section-heading">Media Polarity about <I>Trump</I></center>
                 <br><script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
-<p>After the first glances of thousands pieces of news, we would like to verify our assumption above that the topics about the US presidential election are the most popular ones during the three months before the polling date. </p>
- <div id="stackChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+<div class="col-lg-12">
+<p>After the first glances of thousands pieces of news, we would like to verify our assumption above that the topics about the US presidential election are the most popular ones during the two months before the polling date. </p>
+</div>
 
+   <div class="col-lg-12">
+   <center><img src="img/scale.jpeg" /></center>
+                <p>
+                    Before analyzing the graph, we collected existing material about the media polarity as our reference. Among them, we firstly got some general judgement from the <a href="mediabiasfactcheck.com">MediaBiasFactCheck</a>. And there are some results for several medias:
+                </p>
+                
+                <ol class='roman'>
+                    <li>
+                        CNN: left bias
+                    </li>
+                    <li>
+                        Politico: Least biased
+                    </li>
+                    <li>
+                        Fox News: Right bias
+                    </li>
+                </ol>
+                </div>
+
+    <div class="col-lg-12">
+    <p>
+        As we know, in the United States, the Republican Party is the representation of Right-wing power, and its opponent, the Democraty party, is the symbol of the left-wing or left-middle (<a href="https://en.wikipedia.org/wiki/Democratic_Party_(United_States)">WIKI</a>). Therefore, our hypothesis is that the about trump, the presidential candidate of Republican Party, CNN may show the negative attitude, Politico should stay neural, while Fox news will support for <I>Trump</I>.
+    </p>
+    </div>
+
+
+ <div id="stackChart09" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
 
 <script type="text/javascript">
     
-Highcharts.chart('stackChart', {
+Highcharts.chart('stackChart09', {
+    colors: ['#3366CC','#CCFFFF', '#248f24'],
     chart: {
         type: 'column'
     },
     title: {
         text: 'Media Attitude About Trump'
+    },
+    subtitle: {
+        text: 'September, 2016'
+    },
+    xAxis: {
+        categories: ['ABC News',
+ 'CBS News',
+ 'CNN',
+ 'Fox News',
+ 'Huffington Post',
+ 'Los Angeles Times',
+ 'NPR',
+ 'New York Post',
+ 'Newsweek',
+ 'Politico',
+ 'Quartz',
+ 'Slate Magazine',
+ 'TIME',
+ 'The Atlantic',
+ 'USA TODAY',
+ 'Washington Post']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'News Attitude Percentage'
+        },
+        subtitle: {
+            text: 'October, 2016'
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: {point.percentage:.0f}%<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    series: [{
+        name: 'Positive',
+        data: [0.39130434782608703,
+ 0.375,
+ 0.2307692307692308,
+ 0.6666666666666666,
+ 0.2,
+ 0.2,
+ 0.5,
+ 0.25,
+ 0.16666666666666666,
+ 0.2,
+ 0.16666666666666666,
+ 0.2857142857142857,
+ 0.5,
+ 0.17647058823529413,
+ 0.5,
+ 0.3137254901960784]
+    }, {
+        name: 'Neutral',
+        data: [0.3478260869565218,
+ 0.5,
+ 0.38461538461538464,
+ 5.551115123125783e-17,
+ 0.30000000000000004,
+ 0.475,
+ 0.5,
+ 0.0,
+ 0.5,
+ 0.48,
+ 0.5,
+ 0.2142857142857143,
+ 0.5,
+ 0.6470588235294117,
+ 0.09999999999999998,
+ 0.4901960784313726]
+    }, {
+        name: 'Negative',
+        data: [
+        0.2608695652173913,
+ 0.125,
+ 0.38461538461538464,
+ 0.3333333333333333,
+ 0.5,
+ 0.325,
+ 0.0,
+ 0.75,
+ 0.3333333333333333,
+ 0.32,
+ 0.3333333333333333,
+ 0.5,
+ 0.0,
+ 0.17647058823529413,
+ 0.4,
+ 0.19607843137254904]
+    }]
+});
+</script>
+
+<div id="stackChart" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+<script type="text/javascript">
+    
+Highcharts.chart('stackChart', {
+    colors: ['#3366CC','#CCFFFF', '#248f24'],
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: null
     },
     subtitle: {
         text: 'October, 2016'
@@ -328,6 +466,30 @@ Highcharts.chart('stackChart', {
                     
                     
                 </div>
+                <div class="col-lg-12">
+                    <p>
+                        Expectedly, in the months of September and October in 2016, the result we got is basically matching with the third-party result.
+                    </p>
+                    <p>
+                        For the Politico, we can clearly figure out the percentages of its positive and negative are almost the same. And most of their news are neutral.
+                    </p>
+                    <p>
+                        For the news from CNN, we can find that in both of the months, it shows the major negativeness on Trump. 
+                    </p>
+                    <p>
+                        Furthermore, we find out that in September, the news from Fox mainly supports Trump. But it looks weird that in October, the support from Fox has been eliminated. After checking, we discovered that two events about <I>Trump</I> have attacked his reputations.
+                        <ol>
+                            <li>
+                                On 1st, October, Trump has been reported to have avoided paying the tax for approximate 18 years.[<a href="https://www.nytimes.com/2016/10/02/us/politics/donald-trump-taxes.html">source</a>]
+                            </li>
+                            <li>
+                                On 7th, October, his sexual harassment scandal tape has been leaked out by the victim.[<a href="https://en.wikipedia.org/wiki/Donald_Trump_Access_Hollywood_tape">source</a>]
+                            </li>
+                        </ol>
+                        It is reasonable to explain why the positiveness of Fox on <I>Trump</I> has been dropped down.
+                    </p>
+                    </div>
+             
             </div>
         </div>
 
@@ -398,7 +560,7 @@ Highcharts.chart('stackChart', {
                     </center>
                     <br>
                     <p>
-                    And from them, based on the consideration of controversiality, we selected ....... as our next step study.
+                    And from them, based on the consideration of controversiality, we selected <I>Clinton</I> and <I>Republican</I> as our next step study.
                     </p>
                 </p>
 
@@ -407,9 +569,603 @@ Highcharts.chart('stackChart', {
 
 
 </div>  
-                                 
-              
-          </div>
+</div>      
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <hr class="primary">
+                    <h2 id="head4" class="section-heading">Media Polarity of <I>Clinton</I> and <I>Republican</I></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 ">
+                    <br>
+                    <p>
+                        In this part, we would like to try to dig up the relationship between <I>Trump</I> and its related topics.
+                    </p>
+                    <p>The reason why we choose these two topics is that <I>Trump</I> is the representative of <I>Republican Party</I>, and we believe there should be some strong relationship between. And we can't miss his opponent <I>Clinton</I></p>
+                    <p> Firstly, we would like to dig up the media polarity behind <I>Clinton</I>. As the first woman presidential candidate, her involvement in the campaign has involved tons of attentions.</p>
+
+                    <p>The following are the media polarity checks about <I>Clinton</I> and <I>Republican</I> among the mainstream media three months before polling date. 
+                     <div id="clinton" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                         <script type="text/javascript">
+                             
+Highcharts.chart('clinton', {
+    colors: ['#3366CC','#CCFFFF', '#248f24'],
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Media Polarity about Clinton'
+    },
+    subtitle: {
+        text: 'Aug-Oct, 2016'
+    },
+    xAxis: {
+        categories: ['ABC News',
+ 'CBS News',
+ 'CNN',
+ 'Fox News',
+ 'Huffington Post',
+ 'Los Angeles Times',
+ 'NPR',
+ 'New York Post',
+ 'Politico',
+ 'Quartz',
+ 'Reuters',
+ 'Slate Magazine',
+ 'TIME',
+ 'The Atlantic',
+ 'USA TODAY',
+ 'Washington Post']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'News Attitude Percentage'
+        },
+        subtitle: {
+            text: 'October, 2016'
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: {point.percentage:.0f}%<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    series: [{
+        name: 'Positive',
+        data: [0.4,
+ 0.24,
+ 0.19047619047619047,
+ 0.4,
+ 0.35294117647058826,
+ 0.22666666666666666,
+ 0.4166666666666667,
+ 0.3333333333333333,
+ 0.29850746268656714,
+ 0.1875,
+ 0.8,
+ 0.10526315789473684,
+ 0.6666666666666666,
+ 0.15789473684210525,
+ 0.4,
+ 0.3828125]
+    }, {
+        name: 'Neutral',
+        data: [0.3,
+ 0.4,
+ 0.5714285714285714,
+ 0.11428571428571427,
+ 0.3529411764705881,
+ 0.4933333333333333,
+ 0.3333333333333333,
+ 0.20833333333333345,
+ 0.4626865671641791,
+ 0.375,
+ 0.2,
+ 0.5263157894736843,
+ 0.2666666666666667,
+ 0.5789473684210527,
+ 0.3142857142857143,
+ 0.5]
+    }, {
+        name: 'Negative',
+        data: [
+        0.3,
+ 0.36,
+ 0.2380952380952381,
+ 0.4857142857142857,
+ 0.29411764705882354,
+ 0.28,
+ 0.25,
+ 0.4583333333333333,
+ 0.2388059701492537,
+ 0.4375,
+ 0.0,
+ 0.3684210526315789,
+ 0.06666666666666668,
+ 0.2631578947368421,
+ 0.2857142857142857,
+ 0.1171875]
+    }]
+});
+                         </script>
+                     </div>
+                     <div id="republican" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                                                  <script type="text/javascript">
+                             
+Highcharts.chart('republican', {
+    colors: ['#3366CC','#CCFFFF', '#248f24'],
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Media Polarity about Republican'
+    },
+    subtitle: {
+        text: 'Aug-Oct, 2016'
+    },
+    xAxis: {
+        categories: ['ABC News',
+ 'CBS News',
+ 'CNN',
+ 'Fox News',
+ 'Huffington Post',
+ 'Los Angeles Times',
+ 'NPR',
+ 'New York Post',
+ 'Politico',
+ 'Quartz',
+ 'Reuters',
+ 'Slate Magazine',
+ 'TIME',
+ 'The Atlantic',
+ 'USA TODAY',
+ 'Washington Post']
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'News Attitude Percentage'
+        },
+        subtitle: {
+            text: 'October, 2016'
+        }
+    },
+    tooltip: {
+        pointFormat: '<span style="color:{series.color}">{series.name}</span>: {point.percentage:.0f}%<br/>',
+        shared: true
+    },
+    plotOptions: {
+        column: {
+            stacking: 'percent'
+        }
+    },
+    series: [{
+        name: 'Positive',
+        data: [0.15384615384615385,
+ 0.16666666666666666,
+ 0.16666666666666666,
+ 0.5714285714285714,
+ 0.07692307692307693,
+ 0.2,
+ 0.5,
+ 0.0,
+ 0.3636363636363637,
+ 0.0,
+ 0.2857142857142857,
+ 0.2,
+ 0.4444444444444444,
+ 0.2,
+ 0.3157894736842105,
+ 0.4363636363636363]
+    }, {
+        name: 'Neutral',
+        data: [0.5384615384615384,
+ 0.33333333333333337,
+ 0.5,
+ 0.1428571428571429,
+ 0.4615384615384616,
+ 0.5,
+ 0.4166666666666667,
+ 0.5,
+ 0.4242424242424242,
+ 0.6,
+ 0.4285714285714286,
+ 0.2666666666666667,
+ 0.22222222222222227,
+ 0.4,
+ 0.4210526315789474,
+ 0.5090909090909091]
+    }, {
+        name: 'Negative',
+        data: [
+        0.3076923076923077,
+ 0.5,
+ 0.3333333333333333,
+ 0.2857142857142857,
+ 0.4615384615384616,
+ 0.3,
+ 0.08333333333333333,
+ 0.5,
+ 0.21212121212121213,
+ 0.4,
+ 0.2857142857142857,
+ 0.5333333333333333,
+ 0.3333333333333333,
+ 0.4,
+ 0.2631578947368421,
+ 0.054545454545454536]
+    }]
+});
+                         </script>
+                     </div>
+                     <div class='col-lg-12'>
+                     <p>
+                        Before comparing them with <I>Trump</I>, we are so delighted to see that in the media polarity check of <I>Republican</I>, the hypothesis put forward in <I>Trump</I>. CNN and other left-wing medias hold negative attitude.
+                        </p>
+                     </div>
+
+                     <div class='col-lg-12'>
+                     <p>
+                        In the following, we selected four mainstream media and analyze their media polarity based on the topic <I>Trump</I>, <I>Clinton</I> and <I>Republican</I>.
+                        </p>
+                        <div class='col-md-6'>
+                        <div id="comparecnn" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                            <script type="text/javascript">
+
+Highcharts.chart('comparecnn', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'CNN Polarity'
+    },
+    subtitle: {
+        text: null
+    },
+    xAxis: {
+        categories: [
+            'Positive', 'Neutral', 'Negative'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Polarity'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.2f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Trump',
+        data: [0.272727, 0.424242,0.303030]
+    }, {
+        name: 'Clinton',
+        data: [0.190476, 0.571429,0.238095]
+
+    }, {
+        name: 'Republican',
+        data: [0.166667,0.500000,0.333333]
+
+    }]
+});
+                            </script>
+                        </div>
+                        </div>
+
+                        <div class='col-md-6'>
+                        <div id="comparefox" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                            <script type="text/javascript">
+
+Highcharts.chart('comparefox', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Fox Polarity'
+    },
+    subtitle: {
+        text: null
+    },
+    xAxis: {
+        categories: [
+            'Positive', 'Neutral', 'Negative'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Polarity'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.2f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Trump',
+        data: [0.360000, 0.080000, 0.560000]
+    }, {
+        name: 'Clinton',
+        data: [0.400000,0.114286,0.485714]
+
+    }, {
+        name: 'Republican',
+        data: [0.571429,0.142857,0.285714]
+
+    }]
+});
+                            </script>
+                        </div>
+                        </div>
+
+
+                                                <div class='col-md-6'>
+                        <div id="compareabc" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                            <script type="text/javascript">
+
+Highcharts.chart('compareabc', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'ABC Polarity'
+    },
+    subtitle: {
+        text: null
+    },
+    xAxis: {
+        categories: [
+            'Positive', 'Neutral', 'Negative'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        max:0.8,
+        title: {
+            text: 'Polarity'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.2f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Trump',
+        data: [0.382716,0.320988,0.296296]
+    }, {
+        name: 'Clinton',
+        data: [0.400000,0.300000,0.300000]
+
+    }, {
+        name: 'Republican',
+        data: [0.153846,0.498462,0.347692]
+
+    }]
+});
+                            </script>
+                        </div>
+                        </div>
+
+
+                                                                        <div class='col-md-6'>
+                        <div id="comparePol" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
+                            <script type="text/javascript">
+
+Highcharts.chart('comparePol', {
+    chart: {
+        type: 'column'
+    },
+    title: {
+        text: 'Politico Polarity'
+    },
+    subtitle: {
+        text: null
+    },
+    xAxis: {
+        categories: [
+            'Positive', 'Neutral', 'Negative'
+        ],
+        crosshair: true
+    },
+    yAxis: {
+        min: 0,
+        max:0.8,
+        title: {
+            text: 'Polarity'
+        }
+    },
+    tooltip: {
+        headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+        pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+            '<td style="padding:0"><b>{point.y:.2f}</b></td></tr>',
+        footerFormat: '</table>',
+        shared: true,
+        useHTML: true
+    },
+    plotOptions: {
+        column: {
+            pointPadding: 0.2,
+            borderWidth: 0
+        }
+    },
+    series: [{
+        name: 'Trump',
+        data: [0.298969,0.505155,0.195876]
+    }, {
+        name: 'Clinton',
+        data: [0.298507,0.462687,0.238806]
+
+    }, {
+        name: 'Republican',
+        data: [0.363636,0.424242,0.212121]
+
+    }]
+});
+                            </script>
+                        </div>
+                        </div>
+                        <div class="col-lg-12">
+                        <br><br>
+                            <p>
+                            From the above chart, we could discover the following findings:
+                            <ol class="roman">
+                                <li>
+                                    Politico is always neutral as usual.
+                                </li>
+                                <li>
+                                    It verifies again that Fox is a firm supporter of Republican, however, it seems like this media always goes to extreme, which is irresponsible as a media.
+                                </li>
+                                <li>
+                                    For ABC, there indeed existed the media polary to Clinton, and criticized Republican Party and Trump.
+                                </li>
+                                <li>
+                                    What impressed us most is that CNN is not so polarized under this case. A lot of news are located in the neural region.
+                                </li>
+                            </ol>
+                            </p>
+                        </div>
+
+
+                     </div>
+                                                
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <hr class="primary">
+                    <h2 id="head4" class="section-heading">Other View of Media Polarity</h2>
+          
+                </div>
+            </div>
+        </div>
+        <div>
+                            <p>
+                                We scatter the result with x-axis be positive polarty, and y-axis be negative polarity. After our observation, we find that it also match our hypothesis.
+                            </p>
+                            <ol>
+                                <li>
+                                    We find that the value of x and y of <B>Politico</B> and <B>CNN</B> are quite similar, indicating that the opinion of <B>Politico</B> is quite neural.
+                                </li>
+                                <li>
+                                    <B>Fox</B>'s polarity pairs are far from the original point, which indicates that its attitude is likely to go to extreme.
+                                </li>
+                                <li>
+                                    There is an obvious negative polarity of <B>ABC</B> on <I>Republican</I>
+                                </li>
+                            </ol>
+                            <p>
+                                We also attached all the polarity of all medias we studies under the 4-media graph.
+                            </p>
+            </div>
+                            
+        <script src="js/base.js"></script>
+
+        <div id="2a4fccb8-69d7-47d7-8151-e2aa5825a6d5" style="width: 100%; height: 100%;" class="plotly-graph-div"></div>
+        <script type="text/javascript">
+            (function(){
+                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+
+                var gd = document.getElementById('2a4fccb8-69d7-47d7-8151-e2aa5825a6d5')
+                var resizeDebounce = null;
+
+                function resizePlot() {
+                    var bb = gd.getBoundingClientRect();
+                    Plotly.relayout(gd, {
+                        width: bb.width,
+                        height: bb.height
+                    });
+                }
+
+                
+
+                
+                Plotly.plot(gd, {
+                    data: [{"textposition": "bottom center", "textfont": {"size": 6}, "uid": "5e8cf2fa-9a6e-40ec-9b4e-a041b84db22e", "ysrc": "yuriatin:45:e7d1ef", "xsrc": "yuriatin:45:8c2065", "mode": "markers+text", "textsrc": "yuriatin:45:a82985", "text": ["(ABC News, Trump)", "(ABC News, Clinton)", "(ABC News, Republic)"], "y": [0.2962962962962963, 0.3, 0.3076923076923077], "x": [0.38271604938271603, 0.4, 0.15384615384615385], "type": "scatter", "name": "ABC News"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "e5757b82-d433-4732-8dc7-2eb4e84412c2", "ysrc": "yuriatin:45:8ecb56", "xsrc": "yuriatin:45:2431b1", "mode": "markers+text", "textsrc": "yuriatin:45:f0054b", "text": ["(CNN, Trump)", "(CNN, Clinton)", "(CNN, Republic)"], "y": [0.30303030303030304, 0.23809523809523808, 0.3333333333333333], "x": [0.2727272727272727, 0.19047619047619047, 0.16666666666666666], "type": "scatter", "name": "CNN"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "51c44739-3e02-43d4-a723-d08349ae3d8b", "ysrc": "yuriatin:45:309d5e", "xsrc": "yuriatin:45:af89da", "mode": "markers+text", "textsrc": "yuriatin:45:f5163c", "text": ["(Fox News, Trump)", "(Fox News, Clinton)", "(Fox News, Republic)"], "y": [0.56, 0.4857142857142857, 0.2857142857142857], "x": [0.36, 0.4, 0.5714285714285714], "type": "scatter", "name": "Fox News"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "445d1fce-dc34-437b-a33d-eac3dd551462", "ysrc": "yuriatin:45:f20870", "xsrc": "yuriatin:45:c6ceef", "mode": "markers+text", "textsrc": "yuriatin:45:42dd66", "text": ["(Politico, Trump)", "(Politico, Clinton)", "(Politico, Republic)"], "y": [0.1958762886597938, 0.23880597014925373, 0.21212121212121213], "x": [0.29896907216494845, 0.29850746268656714, 0.36363636363636365], "type": "scatter", "name": "Politico"}],
+                    layout: {"title": "Scatter of (media, topic) pairs over polarity of 4 mainstream media", "xaxis": {"range": [0, 1], "title": "Positive polarity"}, "yaxis": {"range": [0, 1], "title": "Negative polarity"}},
+                    frames: [],
+                    config: {"mapboxAccessToken": "pk.eyJ1IjoiY2hyaWRkeXAiLCJhIjoiY2lxMnVvdm5iMDA4dnhsbTQ5aHJzcGs0MyJ9.X9o_rzNLNesDxdra4neC_A", "linkText": "Export to plot.ly", "showLink": true}
+                });
+                
+           }());
+        </script>
+
+        <div id="873eae3a-fe96-4743-a999-706bd2f89e8f" style="width: 100%; height: 200%;" class="plotly-graph-div"></div>
+        <script type="text/javascript">
+            (function(){
+                window.PLOTLYENV={'BASE_URL': 'https://plot.ly'};
+
+                var gd = document.getElementById('873eae3a-fe96-4743-a999-706bd2f89e8f')
+                var resizeDebounce = null;
+
+                function resizePlot() {
+                    var bb = gd.getBoundingClientRect();
+                    Plotly.relayout(gd, {
+                        width: bb.width,
+                        height: bb.height
+                    });
+                }
+
+                
+
+                
+                Plotly.plot(gd, {
+                    data: [{"textposition": "bottom center", "textfont": {"size": 6}, "uid": "71632723-2bb1-453f-a5a7-393bded81e59", "ysrc": "yuriatin:43:9462f6", "xsrc": "yuriatin:43:a797d7", "mode": "markers+text", "textsrc": "yuriatin:43:754d7f", "text": ["(ABC News, Trump)", "(ABC News, Clinton)", "(ABC News, Republic)"], "y": [0.2962962962962963, 0.3, 0.3076923076923077], "x": [0.38271604938271603, 0.4, 0.15384615384615385], "type": "scatter", "name": "ABC News"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "3052498c-abd5-49a3-a830-c4f12e56cab1", "ysrc": "yuriatin:43:b5f509", "xsrc": "yuriatin:43:73a91c", "mode": "markers+text", "textsrc": "yuriatin:43:324a8b", "text": ["(CBS News, Trump)", "(CBS News, Clinton)", "(CBS News, Republic)"], "y": [0.36585365853658536, 0.36, 0.5], "x": [0.3170731707317073, 0.24, 0.16666666666666666], "type": "scatter", "name": "CBS News"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "ac63e509-ce48-4533-8fa6-4611b76c4048", "ysrc": "yuriatin:43:ecbe71", "xsrc": "yuriatin:43:570d0d", "mode": "markers+text", "textsrc": "yuriatin:43:54cb74", "text": ["(CNN, Trump)", "(CNN, Clinton)", "(CNN, Republic)"], "y": [0.30303030303030304, 0.23809523809523808, 0.3333333333333333], "x": [0.2727272727272727, 0.19047619047619047, 0.16666666666666666], "type": "scatter", "name": "CNN"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "e04251db-b878-48db-8dae-f3edad676437", "ysrc": "yuriatin:43:d02114", "xsrc": "yuriatin:43:7aa77d", "mode": "markers+text", "textsrc": "yuriatin:43:2311ee", "text": ["(Fox News, Trump)", "(Fox News, Clinton)", "(Fox News, Republic)"], "y": [0.56, 0.4857142857142857, 0.2857142857142857], "x": [0.36, 0.4, 0.5714285714285714], "type": "scatter", "name": "Fox News"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "4fb9daa3-7ee4-4262-abbe-34cd473a254c", "ysrc": "yuriatin:43:36a2d0", "xsrc": "yuriatin:43:b6f1aa", "mode": "markers+text", "textsrc": "yuriatin:43:dad167", "text": ["(Huffington Post, Trump)", "(Huffington Post, Clinton)", "(Huffington Post, Republic)"], "y": [0.3333333333333333, 0.29411764705882354, 0.46153846153846156], "x": [0.3333333333333333, 0.35294117647058826, 0.07692307692307693], "type": "scatter", "name": "Huffington Post"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "6a8ba895-e9c9-4a09-94b1-ab57a009a48a", "ysrc": "yuriatin:43:e2839d", "xsrc": "yuriatin:43:16eb08", "mode": "markers+text", "textsrc": "yuriatin:43:dfd4c7", "text": ["(Los Angeles Times, Trump)", "(Los Angeles Times, Clinton)", "(Los Angeles Times, Republic)"], "y": [0.26666666666666666, 0.28, 0.3], "x": [0.275, 0.22666666666666666, 0.2], "type": "scatter", "name": "Los Angeles Times"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "da55a3b4-02a6-4b85-81c1-502f187e922e", "ysrc": "yuriatin:43:f0c1c0", "xsrc": "yuriatin:43:2d66f8", "mode": "markers+text", "textsrc": "yuriatin:43:7333b3", "text": ["(NPR, Trump)", "(NPR, Clinton)", "(NPR, Republic)"], "y": [0.15384615384615385, 0.25, 0.08333333333333333], "x": [0.4230769230769231, 0.4166666666666667, 0.5], "type": "scatter", "name": "NPR"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "ac04fbbc-61de-442f-9a5c-6c1aac9b1fe5", "ysrc": "yuriatin:43:35a004", "xsrc": "yuriatin:43:42f873", "mode": "markers+text", "textsrc": "yuriatin:43:48baf8", "text": ["(New York Post, Trump)", "(New York Post, Clinton)", "(New York Post, Republic)"], "y": [0.65, 0.4583333333333333, 0.5], "x": [0.2, 0.3333333333333333, 0.0], "type": "scatter", "name": "New York Post"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "363e3358-320a-4219-a649-b2f56e15a7ad", "ysrc": "yuriatin:43:4380e1", "xsrc": "yuriatin:43:3d9256", "mode": "markers+text", "textsrc": "yuriatin:43:72432c", "text": ["(Politico, Trump)", "(Politico, Clinton)", "(Politico, Republic)"], "y": [0.1958762886597938, 0.23880597014925373, 0.21212121212121213], "x": [0.29896907216494845, 0.29850746268656714, 0.36363636363636365], "type": "scatter", "name": "Politico"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "d3cb32bd-4000-4d61-9b11-7d5b66473639", "ysrc": "yuriatin:43:144198", "xsrc": "yuriatin:43:2cbf36", "mode": "markers+text", "textsrc": "yuriatin:43:ebbcc7", "text": ["(Quartz, Trump)", "(Quartz, Clinton)", "(Quartz, Republic)"], "y": [0.37037037037037035, 0.4375, 0.4], "x": [0.2222222222222222, 0.1875, 0.0], "type": "scatter", "name": "Quartz"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "16ac645c-71a9-4008-be24-ecd95061e210", "ysrc": "yuriatin:43:0ff843", "xsrc": "yuriatin:43:a50d68", "mode": "markers+text", "textsrc": "yuriatin:43:f81dcb", "text": ["(Reuters, Trump)", "(Reuters, Clinton)", "(Reuters, Republic)"], "y": [0.3333333333333333, 0.0, 0.2857142857142857], "x": [0.3333333333333333, 0.8, 0.2857142857142857], "type": "scatter", "name": "Reuters"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "8b3c3a43-472f-4c8c-bf13-ab8198b3dce3", "ysrc": "yuriatin:43:3374e6", "xsrc": "yuriatin:43:94e653", "mode": "markers+text", "textsrc": "yuriatin:43:c2f6ea", "text": ["(Slate Magazine, Trump)", "(Slate Magazine, Clinton)", "(Slate Magazine, Republic)"], "y": [0.4230769230769231, 0.3684210526315789, 0.5333333333333333], "x": [0.19230769230769232, 0.10526315789473684, 0.2], "type": "scatter", "name": "Slate Magazine"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "24026a3e-0b4b-43e9-9323-0ed53ebb5e06", "ysrc": "yuriatin:43:cf1ebf", "xsrc": "yuriatin:43:0e1bcc", "mode": "markers+text", "textsrc": "yuriatin:43:515cfd", "text": ["(TIME, Trump)", "(TIME, Clinton)", "(TIME, Republic)"], "y": [0.07692307692307693, 0.06666666666666667, 0.3333333333333333], "x": [0.5128205128205128, 0.6666666666666666, 0.4444444444444444], "type": "scatter", "name": "TIME"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "544f97ff-7b60-48ab-86e5-772293fce0d1", "ysrc": "yuriatin:43:062dca", "xsrc": "yuriatin:43:216a1a", "mode": "markers+text", "textsrc": "yuriatin:43:18de4d", "text": ["(The Atlantic, Trump)", "(The Atlantic, Clinton)", "(The Atlantic, Republic)"], "y": [0.16666666666666666, 0.2631578947368421, 0.4], "x": [0.14583333333333334, 0.15789473684210525, 0.2], "type": "scatter", "name": "The Atlantic"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "9de12a73-4761-415c-954a-f05e31e1bf27", "ysrc": "yuriatin:43:ce2cd0", "xsrc": "yuriatin:43:06c21d", "mode": "markers+text", "textsrc": "yuriatin:43:891f5d", "text": ["(USA TODAY, Trump)", "(USA TODAY, Clinton)", "(USA TODAY, Republic)"], "y": [0.25, 0.2857142857142857, 0.2631578947368421], "x": [0.375, 0.4, 0.3157894736842105], "type": "scatter", "name": "USA TODAY"}, {"textposition": "bottom center", "textfont": {"size": 6}, "uid": "6ffa7b18-942f-40c2-a9ac-97f5beed4dd4", "ysrc": "yuriatin:43:04192e", "xsrc": "yuriatin:43:773f1e", "mode": "markers+text", "textsrc": "yuriatin:43:d1b06a", "text": ["(Washington Post, Trump)", "(Washington Post, Clinton)", "(Washington Post, Republic)"], "y": [0.1411042944785276, 0.1171875, 0.05454545454545454], "x": [0.39263803680981596, 0.3828125, 0.43636363636363634], "type": "scatter", "name": "Washington Post"}],
+                    layout: {"title": "Scatter of (media, topic) pairs over polarity", "xaxis": {"range": [0, 1], "title": "Positive polarity"}, "yaxis": {"range": [0, 1], "title": "Negative polarity"}},
+                    frames: []
+                });
+                
+           }());
+        </script>
+
          <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
