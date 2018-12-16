@@ -81,8 +81,41 @@
                     <center><blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">FAKE NEWS - A TOTAL POLITICAL WITCH HUNT!</p>&mdash; Donald J. Trump (@realDonaldTrump) <a href="https://twitter.com/realdonaldtrump/status/818990655418617856">January 10, 2017</a></blockquote>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></center>
                     <p>
-                    The main goal of our project is to mine the news before the polling day, November 7th, mainly on the website, to verify <i>whether there exists a phenomena media polarity in news sentiment towards Trump and the relative topics. </i></p>
+                    The main goal of our project is to mine the news before the polling day, November 7th, mainly on the website, to figure out <i>whether public's conventional judgement of media are correct or not, i.e. whether 'fake news' is fake</i></p>
         </div>
+                <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <hr class="primary">
+                    <h2 id="head4" class="section-heading">Literature Review</h2>
+                </div>
+            </div>
+        </div>
+           
+                <center><img src="img/scale.jpeg" /></center>
+                <div class="col-lg-12">
+                <p>
+                We collected existing material about the media polarity as our reference. Among them, we firstly got some general judgements from the <a href="mediabiasfactcheck.com">MediaBiasFactCheck</a>. Some conventional results are listed below:
+                </p>
+                
+                <ol class='roman'>
+                    <li>
+                        CNN: left biased
+                    </li>
+                    <li>
+                        ABC: left-center biased
+                    </li>
+                    <li>
+                        Politico: Least biased
+                    </li>
+                    <li>
+                        Fox News: Right biased
+                    </li>
+                </ol>
+                <p>
+                    Since these four medias are so popular, we decided to set these as our targets.
+                </p>
+                </div>
      
         
 <div class="container">
@@ -100,19 +133,19 @@
                         <strong>The text file</strong> contains the content of news.
                     </li>
                     <li>
-                        <strong>The lexicon file</strong> contains the linguistic information for each word, which is useful for our futher NLP analysis.
+                        <strong>The lexicon file</strong> contains the linguistic information for each word, which is useful for our further NLP analysis.
                     </li>
                     </ol>
                     </p>
                     <br>
                     <p>
-                        After the observation and analysis on the datasets above, we mainly preprocess the data in the following aspects:
+                        After observing and analyzing on the datasets above, we mainly preprocessed the data in the following aspects:
                         <ol class="roman">
                             <li>
-                                <strong>Data Extraction</strong>: retrieve the news during the <strong>three months</strong> before the polling date (August, September and October), which is our assumption: these three months are the fierce period of the competition.
+                                <strong>Data Extraction</strong>: retrieved the news during the <strong>three months</strong> before the polling date (August, September and October). According to our assumption, these three months are the competetive period of the election.
                             </li>
                             <li>
-                                <strong>Text Cleaning</strong>: remove stopwords, punctuations (excluding sentence splitters), and other unnecessary and illegal characters
+                                <strong>Text Cleaning</strong>: removed stopwords, punctuations (excluding sentence splitters), and other unnecessary and illegal characters
                             </li>
                             <li>
                                 <strong>Media Grouping</strong>: for one media, it can be presented in multiple formats, such as 'Fox News', 'fox6', and 'www.fox5sendiego.com'. Therefore, we need to collect and group them together as one media.
@@ -133,6 +166,7 @@
                 <br>
                     <p>As there are thousands of medias on the website, we decided to choose the mainstream medias based on the <a href="https://www.allyoucanread.com/american-newspapers/">reference</a>. It has collected top 30 US media. Later, we checked the frequency of these media in our October news dataset, and drop out some medias with fewer publications. We set the frequency threshold as 500 to filter out four unpopular medias.
                     </p>
+                    <p> Luckily, the four target medias are all in this list.
                 <br>
                 </div>
                 <div class="col-lg-12 ">
@@ -194,13 +228,13 @@
                     <br>
                     <br>
                     <p>
-                        From three month plots, we suprisely find that in all of the three months, the terminologies in the campaign like <I>election</I> and <I>voter</I> exist frequently.
+                        Surprisingly from three month plots, we find that in all of the three months, the terminologies in the campaign like <I>election</I> and <I>voter</I> exist frequently.
                         <br>
                         <br>
-                        Meanwhile, the hot topics drawing extensive attention such as <I>woman</I> and <I>police</I> are also booming up in our keyword analysis. They reflect special features during the elections: Clinton is the first woman candidate from Republican and Democrartic Parties, and the right police has been controversary during the campaign.
+                        Meanwhile, the hot topics drawing extensive attention such as <I>woman</I> and <I>police</I> are also booming up in our keyword analysis. They reflected special features during the elections: Clinton is the first woman candidate from Republican and Democrartic Parties, and the right of police has been controversary during the campaign.
                         <br>
                         <br>
-                        What most supported our assumption is that during all three months, <I>trump</I> is most concentrating topic! And we check the media polarity of topic <I>trump</I> first.
+                        What supported our assumption most is that during all three months, <I>trump</I> is most popular topic! And we check the media polarity of topic <I>trump</I> first.
 
                     </p>
                 </div>
@@ -232,31 +266,14 @@
                 <br><script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <div class="col-lg-12">
-<p>After the first glances of thousands pieces of news, we would like to verify our assumption above that the topics about the US presidential election are the most popular ones during the two months before the polling date. </p>
+<p>After the first glance of thousands pieces of news, we would like to verify our assumption above that the topics about the US presidential election are the most popular ones during the two months (September, October, 2018) before the polling date. </p>
 </div>
 
-   <div class="col-lg-12">
-   <center><img src="img/scale.jpeg" /></center>
-                <p>
-                    Before analyzing the graph, we collected existing material about the media polarity as our reference. Among them, we firstly got some general judgement from the <a href="mediabiasfactcheck.com">MediaBiasFactCheck</a>. And there are some results for several medias:
-                </p>
-                
-                <ol class='roman'>
-                    <li>
-                        CNN: left bias
-                    </li>
-                    <li>
-                        Politico: Least biased
-                    </li>
-                    <li>
-                        Fox News: Right bias
-                    </li>
-                </ol>
-                </div>
+
 
     <div class="col-lg-12">
     <p>
-        As we know, in the United States, the Republican Party is the representation of Right-wing power, and its opponent, the Democraty party, is the symbol of the left-wing or left-middle (<a href="https://en.wikipedia.org/wiki/Democratic_Party_(United_States)">WIKI</a>). Therefore, our hypothesis is that the about trump, the presidential candidate of Republican Party, CNN may show the negative attitude, Politico should stay neural, while Fox news will support for <I>Trump</I>.
+        As we know, in the United States, the Republican Party is the representation of Right-wing power, and its opponent, the Democraty party, is the symbol of the left-wing or left-middle (<a href="https://en.wikipedia.org/wiki/Democratic_Party_(United_States)">WIKI</a>). Therefore, our hypothesis is that the about Trump, the presidential candidate of Republican Party, CNN may show the negative attitude, Politico should stay neural, while Fox news will support for <I>Trump</I>.
     </p>
     </div>
 
@@ -468,7 +485,7 @@ Highcharts.chart('stackChart', {
                 </div>
                 <div class="col-lg-12">
                     <p>
-                        Expectedly, in the months of September and October in 2016, the result we got is basically matching with the third-party result.
+                        Expectedly, in the months of September and October in 2016, the result we got is basically matching with the conventional result.
                     </p>
                     <p>
                         For the Politico, we can clearly figure out the percentages of its positive and negative are almost the same. And most of their news are neutral.
@@ -477,7 +494,7 @@ Highcharts.chart('stackChart', {
                         For the news from CNN, we can find that in both of the months, it shows the major negativeness on Trump. 
                     </p>
                     <p>
-                        Furthermore, we find out that in September, the news from Fox mainly supports Trump. But it looks weird that in October, the support from Fox has been eliminated. After checking, we discovered that two events about <I>Trump</I> have attacked his reputations.
+                        Furthermore, we find out that in September, the news from Fox mainly supported Trump. But it is abnormal that in October, the support from Fox diminished. After search, we discovered that two events about <I>Trump</I> have disgraded his reputations.
                         <ol>
                             <li>
                                 On 1st, October, Trump has been reported to have avoided paying the tax for approximate 18 years.[<a href="https://www.nytimes.com/2016/10/02/us/politics/donald-trump-taxes.html">source</a>]
@@ -501,7 +518,7 @@ Highcharts.chart('stackChart', {
 
 
                 <p>
-                    After the media polarity check with topic <I>trump</I>, we would like to expand topics which are related to <I>trump</I>.
+                    After the media polarity check with topic <I>trump</I>, we would like to expand topics which are related to <I>trump</I> to make our result more convincing.
                     <br>
                     <br>
                     Based on the three calculation methods, which will be later elaborated in the methodology part, we evaluated the relationship between <I>trump</I> and other topics, and display it as a word chart.
@@ -510,7 +527,7 @@ Highcharts.chart('stackChart', {
                 <br>
                 <br>
                 <p>
-                    As we found that the topics selected have been messed up, where involved a lot of <I>Name</I>, <I>City</I> and <I>State</I> which we are not interested in, we filtered out the topics which belong to these catogories. The result is following:
+                    As we found that the topics selected have been messed up, which involved a lot of <I>Name</I>, <I>City</I> and <I>State</I>, we decided to categorize the topics. The result is following:
                 </p>
 
                 <div class="col-md-4">
@@ -585,12 +602,12 @@ Highcharts.chart('stackChart', {
                 <div class="col-lg-12 ">
                     <br>
                     <p>
-                        In this part, we would like to try to dig up the relationship between <I>Trump</I> and its related topics.
+                        In this part, we would like to try to utilize the relationship between trump and the selected topics to further evaluate the reliablilty of those conventional judgments.
                     </p>
-                    <p>The reason why we choose these two topics is that <I>Trump</I> is the representative of <I>Republican Party</I>, and we believe there should be some strong relationship between. And we can't miss his opponent <I>Clinton</I></p>
+                    <p>The reason why we choose these two topics are that <I>Trump</I> was the representative of <I>Republican Party</I>, and thus there should be strong similarity between the attitudes towards these two entities. Furthermore we also cannot ignore <I>Clinton</I> as she was the opponent of Trump during the election.</p>
                     <p> Firstly, we would like to dig up the media polarity behind <I>Clinton</I>. As the first woman presidential candidate, her involvement in the campaign has involved tons of attentions.</p>
 
-                    <p>The following are the media polarity checks about <I>Clinton</I> and <I>Republican</I> among the mainstream media three months before polling date. 
+                    <p>The following are the media polarity checks about <I>Clinton</I> and <I>Republican</I> among the mainstream media three months before polling date. </p>
                      <div id="clinton" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto">
                          <script type="text/javascript">
                              
@@ -809,11 +826,7 @@ Highcharts.chart('republican', {
 });
                          </script>
                      </div>
-                     <div class='col-lg-12'>
-                     <p>
-                        Before comparing them with <I>Trump</I>, we are so delighted to see that in the media polarity check of <I>Republican</I>, the hypothesis put forward in <I>Trump</I>. CNN and other left-wing medias hold negative attitude.
-                        </p>
-                     </div>
+             
 
                      <div class='col-lg-12'>
                      <p>
@@ -1054,18 +1067,18 @@ Highcharts.chart('comparePol', {
                         <br><br>
                             <p>
                             From the above chart, we could discover the following findings:
-                            <ol class="roman">
+                            <ol class="roman"  style="font-size:20px">
                                 <li>
-                                    Politico is always neutral as usual.
+                                    Politico is always neutral as expected.
                                 </li>
                                 <li>
-                                    It verifies again that Fox is a firm supporter of Republican, however, it seems like this media always goes to extreme, which is irresponsible as a media.
+                                    It confirms again that Fox is a firm supporter of Republican. However, it seems like this media always goes to extreme, which may not be resposible to the public.
                                 </li>
                                 <li>
-                                    For ABC, there indeed existed the media polary to Clinton, and criticized Republican Party and Trump.
+                                    For ABC, there indeed existed tendency towards praising Clinton, and criticizing Republican Party and Trump.
                                 </li>
                                 <li>
-                                    What impressed us most is that CNN is not so polarized under this case. A lot of news are located in the neural region.
+                                    The most astonishing finding is that CNN is not so polarized as expected based on our analysis. This can be seen from the distribution of polarity above that the marjority of CNN's news is located in the neutral region.
                                 </li>
                             </ol>
                             </p>
@@ -1165,6 +1178,24 @@ Highcharts.chart('comparePol', {
                 
            }());
         </script>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                <hr class="primary">
+                    <h2 id="head4" class="section-heading">Conclusion</h2>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+        <p>
+            By investigating into the polarity of news just before the US election's polling date in 2016, some conventional judgments to the media are verified while some are challenged based on our analysis. Through out the whole process, we first successfully verified that Trump was the hottest topic during that periods. Then we observed the distinctions among media's attitudes towards this 'strange' president candidate. By focusing on the most related two entities with Trump, i.e., Clinton and Republican, and looking into the behaviors of four typical media in America, we eventually found out that public's conventional feeling that Politico tends to be neutral is correct and Fox is a solid supporter to Republican is correct. On the other hand, the so-called 'fake news' CNN as referred by Trump was not biased to some extent. 
+        </p>
+        <p>
+            As mentioned above, media is a forth power in the civilized society. We hope media is able to shoulder the responsiblity of reporting truth and objective.
+        </p>
+        <div>
 
          <div class="container">
             <div class="row">
